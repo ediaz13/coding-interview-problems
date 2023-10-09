@@ -27,7 +27,7 @@ public class Exercise1 {
      */
 
 
-    public boolean findPair(int[] arr, int k){
+    public static boolean findPair(int[] arr, int k){
         boolean findPair = false;
 
         HashMap<Integer, Boolean> hashSetNumeros = new HashMap<Integer, Boolean>();
@@ -44,7 +44,12 @@ public class Exercise1 {
 
         return findPair;
     }
-    public static void main(String[] args) {
 
+    public static void main(String[] args) {
+        int k = 34;
+
+        int[] arrayInt = {3, 4, 6, 7, 9, 2};
+
+        System.out.println(findPair(arrayInt, k));
     }
 }
