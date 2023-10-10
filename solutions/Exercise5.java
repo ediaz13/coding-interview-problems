@@ -1,4 +1,4 @@
-import java.lang.reflect.Executable;
+package solutions;
 
 public class Exercise5 {
     /*
@@ -90,8 +90,8 @@ public class Exercise5 {
         );
 
         Exercise5.dfsPreorder(root);
-        //Exercise5.dfsInorder(root);
-        //Exercise5.dfsPostorder(root);
+        //solutions.Exercise5.dfsInorder(root);
+        //solutions.Exercise5.dfsPostorder(root);
 
 
     }
