@@ -1,4 +1,4 @@
-package solutions;
+package solutions.binaryTree;
 
 public class Exercise5 {
     /*
@@ -85,13 +85,13 @@ public class Exercise5 {
         //EL MAIN PAI
         /// Create a sample binary tree
         Tree root = new Tree(1,
-                new Tree(2, new Tree(4), new Tree(5)),
-                new Tree(3)
+                new Exercise5.Tree(2, new Exercise5.Tree(4), new Exercise5.Tree(5)),
+                new Exercise5.Tree(3)
         );
 
         Exercise5.dfsPreorder(root);
-        //solutions.Exercise5.dfsInorder(root);
-        //solutions.Exercise5.dfsPostorder(root);
+        //solutions.binaryTree.Exercise6.Exercise5.dfsInorder(root);
+        //solutions.binaryTree.Exercise6.Exercise5.dfsPostorder(root);
 
 
     }

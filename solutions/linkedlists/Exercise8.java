@@ -1,4 +1,4 @@
-package solutions;
+package solutions.linkedlists;
 
 public class Exercise8 {
 
