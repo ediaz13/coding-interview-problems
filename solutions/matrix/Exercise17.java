@@ -3,15 +3,14 @@ package solutions.matrix;
 public class Exercise17 {
 
     /*
-    Given a matrix of size n*m that contains only 0s and 1s, where 0 means that the cell is empty and 1 means that there is a wall in that cell, create a function that returns the number of paths that we can take to go from the top left cell to the right bottom cell, knowing that you can move to the right or to the bottom only.
+    Solve the problem [Java]
+    Given a matrix of integers matrix of size n*m, where each element matrix[i][j] represents the cost of passing from that cell,
+    create a function that returns the cost of the minimum cost path to go from the top left cell to the right bottom cell,
+    knowing that you can only move to the right or to the bottom.
 
     Example 1:
-
-    Input: matrix = [[0, 0, 0, 0, 1], [1, 0, 1, 0, 0], [0, 0, 1, 0, 0], [0, 0, 0, 0, 0]]
-
-    Output: 4
-
-    Explanation:
+    Input: matrix = [[3, 12, 4, 7, 10], [6, 8, 15, 11, 4], [19, 5, 14, 32, 21], [1, 20, 2, 9, 7]]
+    Output: 54
      */
     public static int minimumCostPath(int[][] matrix){
         // your code here

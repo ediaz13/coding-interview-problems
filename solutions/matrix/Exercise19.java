@@ -2,6 +2,18 @@ package solutions.matrix;
 
 public class Exercise19 {
 
+    /*
+    Given a matrix of size n*m that contains only 0s and 1s, where 0 means that the cell is empty and 1 means that there is a wall in that cell, create a function that returns the number of paths that we can take to go from the top left cell to the right bottom cell, knowing that you can move to the right or to the bottom only.
+
+    Example 1:
+
+    Input: matrix = [[0, 0, 0, 0, 1], [1, 0, 1, 0, 0], [0, 0, 1, 0, 0], [0, 0, 0, 0, 0]]
+
+    Output: 4
+
+    Explanation:
+     */
+
     public static int paths(int[][] matrix){
         // your code here
         int row = matrix.length;
