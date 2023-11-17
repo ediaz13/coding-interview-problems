@@ -17,37 +17,39 @@ public class Exercise17 {
         int rows = matrix.length;
         int columns = matrix[0].length;
 
-        int [][] cost = new int[rows][columns];
-        cost[0][0] = matrix[0][0];
+        int [][] minCostPath = new int[rows][columns];
 
-        for (int i = 1; i < columns; i++) {
-            cost[0][i] = cost[0][i-1] + matrix[0][i];
-        }
-        for (int i = 1; i < rows; i++ ) {
-            cost[i][0] = cost[i-1][0] + matrix[i][0];
+        minCostPath[0][0] = matrix[0][0];
+
+        for (int i = 1; i < matrix.length; i++) {
+            minCostPath[i][0] = minCostPath[i-1][0] + matrix[i][0];
         }
 
-        for (int i = 1; i < rows; i++) {
-            for (int j = 1; j < columns; j++) {
-                cost[i][j] = Math.min(cost[i -1][j], cost[i][j - 1]) + matrix[i][j];
+        for (int j = 1; j < matrix[0].length; j++) {
+            minCostPath[0][j] = minCostPath[0][j - 1] + matrix[0][j];
+        }
+
+        for (int i = 1; i < matrix.length; i++) {
+            for (int j = 1; j < matrix[0].length; j++) {
+                minCostPath[i][j] = matrix[i][j] + Math.min(minCostPath[i][j-1], minCostPath[i-1][j]);
             }
         }
 
-        return cost[rows - 1][columns - 1];
+        return minCostPath[rows -1][columns - 1];
     }
 
     public static int minimumCostPath(int[][] matrix,int i ,int j){
-        int rows = matrix.length;
-        int col = matrix[0].length;
 
-        if (i == rows - 1 && j == col -1) {
+        int numRows = matrix.length;
+        int numColumns = matrix[0].length;
+        if (i == numRows-1 && j == numColumns-1) {
             return matrix[i][j];
-        } else if (i == rows - 1) {
-            return matrix[i][j] + minimumCostPath(matrix, i, j +1);
-        } else if (j == rows - 1) {
-            return matrix[i][j] + minimumCostPath(matrix, i + 1, j);
+        } else if (i == numRows-1) {
+            return matrix[i][j] + minimumCostPath(matrix, i, j+1);
+        } else if (j == numColumns-1) {
+            return matrix[i][j] + minimumCostPath(matrix, i+1, j);
         } else {
-            return matrix[i][j] + Math.min(minimumCostPath(matrix, i + 1, j), minimumCostPath(matrix, i, j + 1));
+            return matrix[i][j] + Math.min(minimumCostPath(matrix,i+1, j), minimumCostPath(matrix, i, j+1));
         }
     }
 
@@ -55,7 +57,7 @@ public class Exercise17 {
         int[][] matrix = {{3, 12, 4, 7, 10}, {6, 8, 15, 11, 4}, {19, 5, 14, 32, 21}, {1, 20, 2, 9, 7}};
 
         System.out.println(minimumCostPath(matrix));
-        System.out.println(minimumCostPath(matrix, 1, 1));
+        System.out.println(minimumCostPath(matrix, 0, 0));
 
     }
 }
